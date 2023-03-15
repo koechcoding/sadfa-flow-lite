@@ -1,4 +1,4 @@
-import { Tag } from "./tag.interface";
+import { Tag } from "./abouts.interface";
 
 export interface Company {
     id: string;

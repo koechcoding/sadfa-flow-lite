@@ -1,6 +1,6 @@
 import { User } from './user.interface';
 import { Answer } from './answer.interface';
-import { Tag } from './tag.interface';
+import { Tag } from './abouts.interface';
 import { QuestionVote } from './questionVote.interface';
 export interface Question {
     id: string;
