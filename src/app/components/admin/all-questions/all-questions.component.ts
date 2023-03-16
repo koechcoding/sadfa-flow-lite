@@ -14,6 +14,8 @@ export class AllQuestionsComponent {
   questions: Question[] = [];
 
   constructor(private store: Store<AppState>){
-    
+    this.store.select(selectQuestions).subscribe((questions)=>{
+      this.questions = questions
+    })
   }
 }
