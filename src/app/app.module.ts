@@ -24,6 +24,7 @@ import { TagsComponent } from './components/home/tags/tags.component';
 import { AskQuestionComponent } from './components/home/questions/ask-question/ask-question.component';
 import { QuestionDetailsComponent } from './components/home/questions/question-details/question-details.component';
 import { SingleQuestionComponent } from './components/home/questions/single-question/single-question.component';
+import { SingleTagComponent } from './components/home/tags/single-tag/single-tag.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SingleQuestionComponent } from './components/home/questions/single-ques
     TagsComponent,
     AskQuestionComponent,
     QuestionDetailsComponent,
-    SingleQuestionComponent
+    SingleQuestionComponent,
+    SingleTagComponent
   ],
   imports: [
     BrowserModule
