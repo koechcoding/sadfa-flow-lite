@@ -25,6 +25,10 @@ import { AskQuestionComponent } from './components/home/questions/ask-question/a
 import { QuestionDetailsComponent } from './components/home/questions/question-details/question-details.component';
 import { SingleQuestionComponent } from './components/home/questions/single-question/single-question.component';
 import { SingleTagComponent } from './components/home/tags/single-tag/single-tag.component';
+import { FilterQuestionPipe } from './pipes/filter-question.pipe';
+import { ShortenQuestionPipe } from './pipes/shorten-question.pipe';
+import { FilterUserPipe } from './pipes/filter-user.pipe';
+import { ShortenUsernamePipe } from './pipes/shorten-username.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { SingleTagComponent } from './components/home/tags/single-tag/single-tag
     AskQuestionComponent,
     QuestionDetailsComponent,
     SingleQuestionComponent,
-    SingleTagComponent
+    SingleTagComponent,
+    FilterQuestionPipe,
+    ShortenQuestionPipe,
+    FilterUserPipe,
+    ShortenUsernamePipe
   ],
   imports: [
     BrowserModule
