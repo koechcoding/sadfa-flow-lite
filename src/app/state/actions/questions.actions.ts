@@ -18,6 +18,9 @@ export const loadQuestionsFailure = createAction(
     (error: any) => ({ error })
 );
 
-
+export const addQuestion = createAction(
+    '[Questions] Add Question',
+    (error: any) => ({ error })
+);
 
 
