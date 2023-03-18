@@ -5,7 +5,7 @@ import { Question } from './interfaces/question.interface';
 import * as QuestionsActions from './state/actions/questions.actions';
 import * as UsersActions from './state/actions/users.actions';
 import * as TagsActions from './state/actions/tags.actions';
-import * as CompaniesActions from './state/actions/companies.actions';
+import * as CompaniesActions from './state/actions/org.actions';
 import { ModalDirective } from './directives/modal.directive';
 import { ModalComponent } from './pages/modal/modal.component';
 
