@@ -43,10 +43,10 @@ export const questionsReducer = createReducer(
         }
     }
     ),
-    on(QuestionsActions.addQuestion, (state, { question }) => {
+    on(QuestionsActions.addQuestion, (state, { }) => {
         return {
             ...state,
-            questions: [...state.questions, question]
+            questions: [...state.questions]
         }
     }
     ),
