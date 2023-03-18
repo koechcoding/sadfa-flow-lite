@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Tag } from '../interfaces/tag.interface';
 import { Observable } from 'rxjs';
+import { Tag } from '../interfaces/abouts.interface';
 
 @Injectable({
   providedIn: 'root'
