@@ -23,4 +23,8 @@ export const addQuestion = createAction(
     (error: any) => ({ error })
 );
 
+export const upVoteQuestion = createAction(
+    '[Questions] Upvote Question',
+    props<{ questionId: string, userId: string }>()
+)
 
