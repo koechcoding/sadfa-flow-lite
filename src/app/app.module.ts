@@ -29,6 +29,8 @@ import { FilterQuestionPipe } from './pipes/filter-question.pipe';
 import { ShortenQuestionPipe } from './pipes/shorten-question.pipe';
 import { FilterUserPipe } from './pipes/filter-user.pipe';
 import { ShortenUsernamePipe } from './pipes/shorten-username.pipe';
+import { ModalDirective } from './directives/modal.directive';
+import { BackgroundColorDirective } from './directives/background-color/background-color.directive';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { ShortenUsernamePipe } from './pipes/shorten-username.pipe';
     FilterQuestionPipe,
     ShortenQuestionPipe,
     FilterUserPipe,
-    ShortenUsernamePipe
+    ShortenUsernamePipe,
+    ModalDirective,
+    BackgroundColorDirective
   ],
   imports: [
     BrowserModule
