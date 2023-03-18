@@ -1,72 +1,99 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { RouterModule } from '@angular/router';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { questionsReducer } from './state/reducers/questions.reducer';
+import { QuestionEffects } from './state/effects/question.effect';
+import { usersReducer } from './state/reducers/users.reducer';
+import { UserEffects } from './state/effects/user.effect';
+import { tagsReducer } from './state/reducers/tags.reducer';
+import { TagsEffects } from './state/effects/tag.effect';
+import { companiesReducer } from './state/reducers/org.reducer';
+import { CompaniesEffects } from './state/effects/org.effect';
+import { _loggedInUserReducer } from './state/reducers/loggedInUser.reducer';
+import { LoggedInUserEffects } from './state/effects/loggedInUser.effect';
+import { RegisterUserEffects } from './state/effects/registerUser.effect';
+import { registerUserReducer } from './state/reducers/registerUser.reducer';
+
+
+import { HomePageComponent } from './components/home/home-page/home-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './pages/home/login/login.component';
+import { LandingPageComponent } from './components/home/landing-page/landing-page.component';
+import { SignupComponent } from './components/home/signup/signup.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { QuestionDetailsComponent } from './components/questions/question-details/question-details.component';
+import { UsersComponent } from './components/users/users.component';
+import { CompaniesComponent } from './components/org/org.component';
+import { TagsComponent } from './components/tags/tags.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AskQuestionComponent } from './components/questions/ask-question/ask-question.component';
+import { ProfileComponent } from './components/home/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
-import { UsersComponent } from './components/admin/users/users.component';
-import { SingleUserComponent } from './components/admin/users/single-user/single-user.component';
-import { QuestionReviewComponent } from './components/admin/question-review/question-review.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/home/footer/footer.component';
-import { HomePageComponent } from './components/home/home-page/home-page.component';
-import { LandingPageComponent } from './components/home/landing-page/landing-page.component';
-import { LoginComponent } from './components/home/login/login.component';
-import { NavbarComponent } from './components/home/navbar/navbar.component';
-import { ProfileComponent } from './components/home/profile/profile.component';
-import { SignupComponent } from './components/home/signup/signup.component';
-import { ModalComponent } from './components/home/modal/modal.component';
-import { PageNotFoundComponent } from './components/home/page-not-found/page-not-found.component';
-import { PrivacyComponent } from './components/home/privacy/privacy.component';
-import { QuestionsComponent } from './components/home/questions/questions.component';
-import { TagsComponent } from './components/home/tags/tags.component';
-import { AskQuestionComponent } from './components/home/questions/ask-question/ask-question.component';
-import { QuestionDetailsComponent } from './components/home/questions/question-details/question-details.component';
-import { SingleQuestionComponent } from './components/home/questions/single-question/single-question.component';
-import { SingleTagComponent } from './components/home/tags/single-tag/single-tag.component';
-import { FilterQuestionPipe } from './pipes/filter-question.pipe';
-import { ShortenQuestionPipe } from './pipes/shorten-question.pipe';
-import { FilterUserPipe } from './pipes/filter-user.pipe';
-import { ShortenUsernamePipe } from './pipes/shorten-username.pipe';
-import { ModalDirective } from './directives/modal.directive';
-import { BackgroundColorDirective } from './directives/background-color/background-color.directive';
+import { AllUsersComponent } from './components/admin/all-users/all-users.component';
 
+const router: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomePageComponent, children: [
+    { path: '', component: LandingPageComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent},
+    { path: 'questions', component: QuestionsComponent},
+    { path: 'questions/:id', component: QuestionDetailsComponent},
+    { path: 'users', component: UsersComponent},
+    { path: 'companies', component: CompaniesComponent},
+    { path: 'tags', component: TagsComponent},
+    { path: 'ask-question', component: AskQuestionComponent},
+    { path: 'profile', component: ProfileComponent},
+    { path: 'about', component: AboutComponent},
+    { path: 'contact', component: ContactComponent},
+    { path: 'privacy', component: PrivacyComponent},
+    { path: '**', component: PageNotFoundComponent}
+
+
+  ]
+
+},
+
+{ path: 'admin', component: AdminHomeComponent,
+children : [
+  { path: '', component: AllQuestionsComponent},
+  { path: 'questions', component: AllQuestionsComponent},
+  { path: 'users', component: AllUsersComponent},
+  { path: '**', component: PageNotFoundComponent}
+
+]},
+{ path: '**', component: PageNotFoundComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    AdminHomeComponent,
-    AllQuestionsComponent,
-    UsersComponent,
-    SingleUserComponent,
-    QuestionReviewComponent,
-    HomeComponent,
-    FooterComponent,
-    HomePageComponent,
-    LandingPageComponent,
-    LoginComponent,
-    NavbarComponent,
-    ProfileComponent,
-    SignupComponent,
-    ModalComponent,
-    PageNotFoundComponent,
-    PrivacyComponent,
-    QuestionsComponent,
-    TagsComponent,
-    AskQuestionComponent,
-    QuestionDetailsComponent,
-    SingleQuestionComponent,
-    SingleTagComponent,
-    FilterQuestionPipe,
-    ShortenQuestionPipe,
-    FilterUserPipe,
-    ShortenUsernamePipe,
-    ModalDirective,
-    BackgroundColorDirective
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({ questions: questionsReducer, users: usersReducer, tags: tagsReducer, companies: companiesReducer , loggedInUser: _loggedInUserReducer, router: routerReducer, registerUser: registerUserReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([QuestionEffects, UserEffects, TagsEffects, CompaniesEffects, LoggedInUserEffects, RegisterUserEffects]),
+    MatIconModule,
+    RouterModule.forRoot(router),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
