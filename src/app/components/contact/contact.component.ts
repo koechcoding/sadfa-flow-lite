@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class ContactComponent {
 
 
-  email = 'onesmus@stackoverflow.com'
+  email = 'koechcoding@stackoverflow.com'
   phone = '254 700 000 000'
   address = 'Nairobi, Kenya'
   facebook = 'https://www.facebook.com/'
