@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Company } from 'src/app/interfaces/company.interface';
+import { Company } from 'src/app/interfaces/org.interface';
 
 @Component({
   selector: 'app-single-company',
