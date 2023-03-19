@@ -43,7 +43,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
-import { AllUsersComponent } from './components/admin/users/users.component';
+import { UsersComponents } from './components/admin/users/users.component';
 
 const router: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -72,7 +72,7 @@ const router: Routes = [
 children : [
   { path: '', component: AllQuestionsComponent},
   { path: 'questions', component: AllQuestionsComponent},
-  { path: 'users', component: AllUsersComponent},
+  { path: 'users', component: UsersComponents},
   { path: '**', component: PageNotFoundComponent}
 
 ]},
