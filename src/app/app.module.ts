@@ -27,13 +27,13 @@ import { registerUserReducer } from './state/reducers/registerUser.reducer';
 
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LoginComponent } from './pages/home/login/login.component';
+import { LoginComponent } from './components/home/login/login.component';
 import { LandingPageComponent } from './components/home/landing-page/landing-page.component';
 import { SignupComponent } from './components/home/signup/signup.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { QuestionDetailsComponent } from './components/questions/question-details/question-details.component';
 import { UsersComponent } from './components/users/users.component';
-import { CompaniesComponent } from './components/org/org.component';
+import { CompaniesComponent } from './components/organizations/org.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AskQuestionComponent } from './components/questions/ask-question/ask-question.component';
@@ -43,7 +43,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
-import { AllUsersComponent } from './components/admin/all-users/all-users.component';
+import { AllUsersComponent } from './components/admin/users/users.component';
 
 const router: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
