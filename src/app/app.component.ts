@@ -7,7 +7,7 @@ import * as UsersActions from './state/actions/users.actions';
 import * as TagsActions from './state/actions/tags.actions';
 import * as CompaniesActions from './state/actions/org.actions';
 import { ModalDirective } from './directives/modal.directive';
-import { ModalComponent } from './pages/modal/modal.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
