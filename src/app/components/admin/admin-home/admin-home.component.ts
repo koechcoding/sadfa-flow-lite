@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AllQuestionsComponent } from '../all-questions/all-questions.component';
-import { AllUsersComponent } from '../all-users/all-users.component';
-import { QuestionStatisticsComponent } from '../question-statistics/question-statistics.component';
-import { UserStatisticsComponent } from '../user-statistics/user-statistics.component';
+import { UsersComponent } from '../../users/users.component';
+import { QuestionReviewComponent } from '../question-review/question-review.component';
 import { RouterModule } from '@angular/router';
+import { UserStatisticsComponent } from '../user-review/user-review.component';
+import { AllQuestionsComponent } from '../all-questions/all-questions.component';
 @Component({
   selector: 'app-admin-home',
   standalone: true,
-  imports: [CommonModule, AllQuestionsComponent, AllUsersComponent, QuestionStatisticsComponent, UserStatisticsComponent, RouterModule],
+  imports: [CommonModule, AllQuestionsComponent, UsersComponent, UserStatisticsComponent, UserStatisticsComponent, RouterModule],
   templateUrl: './admin-home.component.html',
   styleUrls: ['./admin-home.component.css']
 })
