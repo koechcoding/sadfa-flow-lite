@@ -8,8 +8,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   selector: 'app-nav-bar',
   standalone: true,
   imports: [CommonModule, MatIconModule, RouterModule, FontAwesomeModule],
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 export class NavBarComponent {
 

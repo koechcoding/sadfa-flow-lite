@@ -44,6 +44,7 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
 import { UsersComponents } from './components/admin/users/users.component';
+import { UserStatisticsComponent } from './components/admin/user-review/user-review.component';
 
 const router: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -81,6 +82,7 @@ children : [
 @NgModule({
   declarations: [
     AppComponent,
+    UserStatisticsComponent,
     
   ],
   imports: [

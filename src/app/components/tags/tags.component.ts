@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Tag } from '../../../app/interfaces/tag.interface';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app/app.state';
 import { SingleTagComponent } from './single-tag/single-tag.component';
+import { Tag } from 'src/app/interfaces/abouts.interface';
 
 @Component({
   selector: 'app-tags',

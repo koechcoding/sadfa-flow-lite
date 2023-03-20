@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Tag } from 'src/app/interfaces/tag.interface';
+import { Tag } from 'src/app/interfaces/abouts.interface';
 
 @Component({
   selector: 'app-single-tag',
