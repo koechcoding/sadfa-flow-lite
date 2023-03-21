@@ -83,7 +83,6 @@ children : [
   declarations: [
     AppComponent,
     UserStatisticsComponent,
-    userAdmitted
     
   ],
   imports: [
