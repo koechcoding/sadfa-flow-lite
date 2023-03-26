@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AnswerVote } from 'src/app/interfaces/answerVote.interface';
+import { Observable } from 'rxjs';
 
-import { AnswerVoteService } from './answer-vote.service';
 
-describe('AnswerVoteService', () => {
-  let service: AnswerVoteService;
+@Injectable({
+  providedIn: 'root'
+})
+export class AnswerVoteService {
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AnswerVoteService);
-  });
+  constructor(private http: HttpClient) { }
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  getAnswerVotes(): Observable<AnswerVote[]> {
+    return this.http.get<AnswerVote[]>('http://localhost:4000/api/answerVotes');
+  }
+  
+}
